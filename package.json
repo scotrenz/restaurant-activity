@@ -1,14 +1,8 @@
 {
-  "name": "restaurant",
+  "name": "restaurant-activity",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -22,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/scotrenz/restaurant-activity/issues"
   },
-  "homepage": "https://github.com/scotrenz/restaurant-activity#readme"
+  "homepage": "https://github.com/scotrenz/restaurant-activity#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
 }

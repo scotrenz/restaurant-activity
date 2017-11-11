@@ -11,7 +11,7 @@
                     customerName: $('#reserve_name').val().trim(),
                     phoneNumber: $('#reserve_phone').val().trim(),
                     customerEmail: $('#reserve_email').val().trim(),
-                    customerID: $('#reserve_uniqueID').val().trim()
+                    customerID: $('#reserve_unique').val().trim()
                 };
         
                 console.log(newReservation);
@@ -35,7 +35,7 @@
                     $('#reserve_name').val("");
                     $('#reserve_phone').val("");
                     $('#reserve_email').val("");
-                    $('#reserve_uniqueID').val("");
+                    $('#reserve_unique').val("");
         
                 });
         
