@@ -5,37 +5,49 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 var reservations = [
     {
-        name: "",
-        phone: "",
-        email: "",
-        unique_id: ""
+        name: '',
+        phone: '',
+        email: '',
+        unique_id: ''
     }
 ];
+
 var waitList = [
     {
-
+        name: '',
+        phone: '',
+        email: '',
+        unique_id: ''
     }
 ]
-app.get("/viewtables", function(req,res){
 
-})
-app.post("/reservations", function(req, res){
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/reservation", function (req, res) {
+    res.sendFile(path.join(__dirname, "reservation.html"));
+});
+
+app.get("/tables", function (req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.post("/new/reservation", function (req, res) {
     var newReservation = req.body;
-    
-    
-    console.log(newReservation)
-    
-    if(reservations.length < 5){
-        newReservation.table = reservations.length+1;
-        reservations.push(newReservation);
-    }else{
-        newReservation.waitList_id = waitList.length+1;
-        waitList.push(newReservation);
+
+    if (reservations.length < 5) {
+        reservations.push(newReservation)
+    } else {
+        waitList.push(newReservation)
     }
 })
 
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
